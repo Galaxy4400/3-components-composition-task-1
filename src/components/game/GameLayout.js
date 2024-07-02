@@ -17,7 +17,9 @@ GameLayout.propTypes = {
 	currentPlayer: PropTypes.number,
 	isGameEnded: PropTypes.bool,
 	isGameDraw: PropTypes.bool,
+	winPattern: PropTypes.array,
 	cells: PropTypes.array,
 	setCells: PropTypes.func,
 	reset: PropTypes.func,
+	onClick: PropTypes.func,
 };

@@ -47,6 +47,12 @@
 			border-radius: 50%;
 			box-shadow: 9px -5px 22px 0px rgba(34, 60, 80, 0.9) inset;
 		}
+
+		&.win {
+			&::before {
+				border: 15px solid #9bc9a0;
+			}
+		}
 	}
 
 	// .tile_cross
@@ -70,6 +76,13 @@
 		}
 		&::after {
 			rotate: 45deg;
+		}
+
+		&.win {
+			&::before,
+			&::after {
+				background: #9bc9a0;
+			}
 		}
 	}
 }
