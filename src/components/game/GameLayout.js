@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types';
 import { Field } from '../field/Field';
 import { Information } from '../information/Information';
 import css from './game.module.scss';
-import PropTypes from 'prop-types';
 
-export function GameLayout({...props}) {
+export function GameLayout({ ...props }) {
 	return (
 		<div className={css['game']}>
 			<Information {...props} />
@@ -12,7 +12,6 @@ export function GameLayout({...props}) {
 		</div>
 	);
 }
-
 
 GameLayout.propTypes = {
 	currentPlayer: PropTypes.number,

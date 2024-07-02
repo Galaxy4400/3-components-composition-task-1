@@ -16,7 +16,6 @@ export function FieldLayout({ cells, onClick }) {
 	);
 }
 
-
 FieldLayout.propTypes = {
 	cells: PropTypes.array,
 	onClick: PropTypes.func,

@@ -21,7 +21,6 @@ export function Field({ cells, setCells, currentPlayer, isGameEnded, isGameDraw 
 	return <FieldLayout {...{ cells, onClick }} />;
 }
 
-
 Field.propTypes = {
 	cells: PropTypes.array,
 	setCells: PropTypes.func,
