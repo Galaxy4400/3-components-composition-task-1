@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { InformationLayout } from "./InformationLayout";
 import { PLAYERS_PIECES } from "../../shared/constants";
 
@@ -10,3 +11,10 @@ export function Information({isGameDraw, isGameEnded, currentPlayer}) {
 
 	return <InformationLayout>{message}</InformationLayout>
 }
+
+
+Information.propTypes = {
+	isGameDraw: PropTypes.bool,
+	isGameEnded: PropTypes.bool,
+	currentPlayer: PropTypes.number,
+};

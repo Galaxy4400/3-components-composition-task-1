@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './field.module.scss';
 
 export function FieldLayout({ cells, onClick }) {
@@ -14,3 +15,9 @@ export function FieldLayout({ cells, onClick }) {
 		</div>
 	);
 }
+
+
+FieldLayout.propTypes = {
+	cells: PropTypes.array,
+	onClick: PropTypes.func,
+};

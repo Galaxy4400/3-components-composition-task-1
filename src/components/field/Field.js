@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FieldLayout } from './FieldLayout';
 
 export function Field({ cells, setCells, currentPlayer, isGameEnded, isGameDraw }) {
@@ -19,3 +20,12 @@ export function Field({ cells, setCells, currentPlayer, isGameEnded, isGameDraw 
 
 	return <FieldLayout {...{ cells, onClick }} />;
 }
+
+
+Field.propTypes = {
+	cells: PropTypes.array,
+	setCells: PropTypes.func,
+	currentPlayer: PropTypes.number,
+	isGameEnded: PropTypes.bool,
+	isGameDraw: PropTypes.bool,
+};

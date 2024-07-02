@@ -16,6 +16,7 @@ export function Game() {
 		switchPlayer();
 	}, [cells]);
 
+	// Как не свичить игрока после изменения статуса игры
 	function switchPlayer() {
 		setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
 	}
@@ -37,9 +38,8 @@ export function Game() {
 		return WIN_PATTERNS.some((pattern) => pattern.every((fieldId) => cells[fieldId] === currentPlayer));
 	}
 
-	// Проблема с завершением игры?
 	function isDraw() {
-		return cells.every(field => Boolean(field));
+		return cells.every((field) => Boolean(field));
 	}
 
 	function reset() {
