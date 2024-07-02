@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GameLayout } from './GameLayout';
-import { isWin, isDraw, getWinPattern } from './functions';
+import { isWin, isDraw, getWinPattern, getUpdatedCells } from './functions';
 
 export function Game() {
 	const [currentPlayer, setCurrentPlayer] = useState(1);
@@ -14,7 +14,7 @@ export function Game() {
 		if (isGameEnded) return;
 		if (isGameDraw) return;
 
-		const updateCels = getUpdatedCells(cellIndex);
+		const updateCels = getUpdatedCells(cells, cellIndex, currentPlayer);
 
 		setCells(updateCels);
 
@@ -44,14 +44,6 @@ export function Game() {
 		setIsGameDraw(true);
 
 		return true;
-	}
-
-	function getUpdatedCells(cellIndex) {
-		const updatedCells = [...cells];
-
-		updatedCells[cellIndex] = currentPlayer;
-
-		return updatedCells;
 	}
 
 	function reset() {

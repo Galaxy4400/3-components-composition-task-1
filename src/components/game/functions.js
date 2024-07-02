@@ -11,3 +11,11 @@ export function isDraw(cells) {
 export function getWinPattern(cells, currentPlayer) {
 	return WIN_PATTERNS.find((pattern) => pattern.every((fieldId) => cells[fieldId] === currentPlayer));
 }
+
+export function getUpdatedCells(cells, cellIndex, currentPlayer) {
+	const updatedCells = [...cells];
+
+	updatedCells[cellIndex] = currentPlayer;
+
+	return updatedCells;
+}
