@@ -1,0 +1,75 @@
+.field {
+	background-image: url('https://kalix.club/uploads/posts/2022-12/1672276008_kalix-club-p-korichnevii-fon-derevo-krasivo-1.jpg');
+	background-position: center;
+	width: 360px;
+	height: 360px;
+	border-radius: 15px;
+	border: 2px solid #7f5a3f;
+	border-top: none;
+	border-left: none;
+	box-shadow: 5px 5px 22px 0px rgba(34, 60, 80, 0.9);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+	padding: 20px;
+}
+
+.tile {
+	position: relative;
+	border-radius: 15px;
+	border: 2px solid #7f5a3f;
+	border-top: none;
+	border-right: none;
+	background-image: url('https://kalix.club/uploads/posts/2022-12/1672276008_kalix-club-p-korichnevii-fon-derevo-krasivo-1.jpg');
+	background-position: center;
+	rotate: 90deg;
+	box-shadow: 9px -5px 22px 0px rgba(34, 60, 80, 0.9) inset;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	@media (any-hover: hover) {
+		&:hover {
+			filter: brightness(1.2);
+		}
+	}
+
+	// .tile_circle
+	&_circle {
+		pointer-events: none;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+			width: 70px;
+			height: 70px;
+			border: 15px solid #fff;
+			border-radius: 50%;
+			box-shadow: 9px -5px 22px 0px rgba(34, 60, 80, 0.9) inset;
+		}
+	}
+
+	// .tile_cross
+	&_cross {
+		pointer-events: none;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+			width: 70px;
+			height: 15px;
+			background: #fff;
+			border-radius: 5px;
+			box-shadow: 9px -5px 22px 0px rgba(34, 60, 80, 0.9);
+		}
+		&::before {
+			rotate: -45deg;
+		}
+		&::after {
+			rotate: 45deg;
+		}
+	}
+}
