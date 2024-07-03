@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { InformationLayout } from './InformationLayout';
+import { InformationLayout } from './information-layout';
 import { getTitle } from './helpers';
 
 export function Information(props) {

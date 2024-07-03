@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GameLayout } from './GameLayout';
+import { GameLayout } from './game-layout';
 import { isWin, isDraw, getWinPattern, getUpdatedCells } from './helpers';
 
 const initialState = [...Array(9)].fill(null);

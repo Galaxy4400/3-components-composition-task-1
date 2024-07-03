@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FieldLayout } from './FieldLayout';
+import { FieldLayout } from './field-layout';
 
 export function Field(props) {
 	return <FieldLayout {...props} />;

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { Field } from '../field/Field';
-import { Information } from '../information/Information';
+import { Field } from '../field/field';
+import { Information } from '../information/information';
 import css from './game.module.scss';
 
 export function GameLayout({ ...props }) {
