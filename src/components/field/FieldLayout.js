@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import css from './field.module.scss';
+import { getClassName } from './helpers';
 
 export function FieldLayout({ cells, onClick, winPattern }) {
 	return (
 		<div className={css['field']}>
-			{cells.map((player, i) => (
+			{cells.map((player, cellId) => (
 				<button
-					className={`${css['tile']} ${player === 1 ? css['tile_cross'] : ''} ${player === 2 ? css['tile_circle'] : ''} ${winPattern.some((cellId) => cellId === i) ? css['win'] : ''}`}
-					onClick={() => onClick(i)}
-					key={i}
+					className={getClassName(player, cellId, winPattern)}
+					onClick={() => onClick(cellId)}
+					key={cellId}
 				></button>
 			))}
 		</div>

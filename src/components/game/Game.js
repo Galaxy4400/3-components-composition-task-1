@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { GameLayout } from './GameLayout';
-import { isWin, isDraw, getWinPattern, getUpdatedCells } from './functions';
+import { isWin, isDraw, getWinPattern, getUpdatedCells } from './helpers';
+
+const initialState = [...Array(9)].fill(null);
 
 export function Game() {
 	const [currentPlayer, setCurrentPlayer] = useState(1);
 	const [isGameEnded, setIsGameEnded] = useState(false);
 	const [isGameDraw, setIsGameDraw] = useState(false);
 	const [winPattern, setWinPattern] = useState([]);
-	const [cells, setCells] = useState([...Array(9)].fill(null));
+	const [cells, setCells] = useState(initialState);
 
 	function onClick(cellIndex) {
-		if (cells[cellIndex]) return;
-		if (isGameEnded) return;
-		if (isGameDraw) return;
+		if (cells[cellIndex] || isGameEnded || isGameDraw) return;
 
 		const updateCels = getUpdatedCells(cells, cellIndex, currentPlayer);
 
@@ -50,7 +50,8 @@ export function Game() {
 		setCurrentPlayer(1);
 		setIsGameEnded(false);
 		setIsGameDraw(false);
-		setCells([...Array(9)].fill(null));
+		setCells(initialState);
+		setWinPattern([]);
 	}
 
 	return (
