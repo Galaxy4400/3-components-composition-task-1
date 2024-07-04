@@ -1,25 +1,14 @@
-import PropTypes from 'prop-types';
+import css from './game.module.scss';
 import { Field } from '../field/field';
 import { Information } from '../information/information';
-import css from './game.module.scss';
+import { GAME_STATUS } from '../../constants';
 
 export function GameLayout({ ...props }) {
 	return (
 		<div className={css['game']}>
 			<Information {...props} />
 			<Field {...props} />
-			{props.isGameEnded && <button onClick={() => props.reset()}>Начать заново</button>}
+			{props.gameStatus !== GAME_STATUS.TURN && <button onClick={() => props.handleReset()}>Начать заново</button>}
 		</div>
 	);
 }
-
-GameLayout.propTypes = {
-	currentPlayer: PropTypes.number,
-	isGameEnded: PropTypes.bool,
-	isGameDraw: PropTypes.bool,
-	winPattern: PropTypes.array,
-	cells: PropTypes.array,
-	setCells: PropTypes.func,
-	reset: PropTypes.func,
-	onClick: PropTypes.func,
-};

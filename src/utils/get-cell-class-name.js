@@ -1,6 +1,6 @@
-import css from './field.module.scss';
+import css from '../components/field/field.module.scss';
 
-export function getClassName(player, cellId, winPattern) {
+export function getCellClassName(player, cellId, winPattern) {
 	let className = [css['tile']];
 
 	if (player === 1) className.push(css['tile_cross']);

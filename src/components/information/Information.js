@@ -1,13 +1,6 @@
-import PropTypes from 'prop-types';
 import { InformationLayout } from './information-layout';
-import { getTitle } from './helpers';
+import { getInfoTitle } from '../../utils';
 
 export function Information(props) {
-	return <InformationLayout>{getTitle(props)}</InformationLayout>;
+	return <InformationLayout>{getInfoTitle(props)}</InformationLayout>;
 }
-
-Information.propTypes = {
-	isGameDraw: PropTypes.bool,
-	isGameEnded: PropTypes.bool,
-	currentPlayer: PropTypes.number,
-};
