@@ -4,8 +4,6 @@ import { GAME_STATUS, PLAYER } from '../../constants';
 import { getInitialState } from '../../utils';
 import { cellClickHandler, resetHandler } from '../../handlers';
 
-
-
 export function Game() {
 	const [currentPlayer, setCurrentPlayer] = useState(PLAYER.CROSS);
 	const [gameStatus, setGameStatus] = useState(GAME_STATUS.TURN);
@@ -27,7 +25,7 @@ export function Game() {
 		<GameLayout
 			{...state}
 			cellClickHandler={(cellIndex) => cellClickHandler(cellIndex, state)}
-			handleReset={() => resetHandler(state)}
+			resetHandler={() => resetHandler(state)}
 		/>
 	);
 }
